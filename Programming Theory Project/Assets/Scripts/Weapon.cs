@@ -5,7 +5,11 @@ using TMPro;
 
 public abstract class Weapon : MonoBehaviour
 {
-    
-    public abstract void Reload(int number, string ammo);
+    protected TextMeshProUGUI m_InfoText = GameObject.Find("OutputText").GetComponent<TextMeshProUGUI>();
+
+    protected abstract int Number { get; }
+    protected abstract string Ammo { get; }
+
+    protected abstract void Reload(int number, string ammo);
 
 }
