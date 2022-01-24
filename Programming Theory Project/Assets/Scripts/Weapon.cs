@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class Weapon
 {
-    protected TextMeshProUGUI m_InfoText = GameObject.Find("OutputText").GetComponent<TextMeshProUGUI>();
+    protected TextMeshProUGUI InfoText = GameObject.Find("OutputText").GetComponent<TextMeshProUGUI>();
+    protected TextMeshProUGUI ParentText = GameObject.Find("WeaponText").GetComponent<TextMeshProUGUI>();
 
-    protected abstract int Number { get; }
-    protected abstract string Ammo { get; }
+    public abstract int Number { get; }
+    public abstract string Ammo { get; }
 
-    protected abstract void Reload(int number, string ammo);
+    public abstract TextMeshProUGUI MyText { get; }
+
+    public abstract void Reload(int number, string ammo);
 
 }
